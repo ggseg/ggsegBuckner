@@ -1,69 +1,63 @@
 # ggsegBuckner
 
-Buckner cerebellar functional connectivity parcellation for the
-[ggseg](https://github.com/ggseg/ggseg) plotting ecosystem.
+> **Work in Progress** — This package is under active development and
+> has not yet been officially released.
 
-Provides two atlas variants based on the Buckner 2011 cerebellar
-parcellation:
-
-- **buckner7** – 7-network parcellation
-- **buckner17** – 17-network parcellation
+Buckner cerebellar functional parcellation for the ggseg ecosystem.
 
 ## Installation
 
-We recommend installing ggseg atlases through the ggseg
-[r-universe](https://ggseg.r-universe.dev/ui#builds):
+You can install this package from [GitHub](https://github.com/) with:
 
 ``` r
-options(repos = c(
-    ggseg = "https://ggseg.r-universe.dev",
-    CRAN = "https://cloud.r-project.org"))
-
-install.packages("ggsegBuckner")
+# install.packages("pak")
+pak::pak("ggseg/ggsegBuckner")
 ```
 
-You can install the development version from
-[GitHub](https://github.com/) with:
+## 7-network parcellation
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("ggseg/ggsegBuckner")
-```
-
-## Example
-
-``` r
-library(ggsegBuckner)
 library(ggseg)
+#> Loading required package: ggseg.formats
+library(ggsegBuckner)
 library(ggplot2)
 
-plot(buckner7) +
-  theme(legend.position = "bottom",
-        legend.text = element_text(size = 7)) +
-  guides(fill = guide_legend(ncol = 2))
-
-plot(buckner17) +
-  theme(legend.position = "bottom",
-        legend.text = element_text(size = 7)) +
-  guides(fill = guide_legend(ncol = 3))
+ggplot() +
+  geom_brain(
+    atlas = buckner7,
+    mapping = aes(fill = label),
+    position = position_brain(. ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = buckner7$palette, na.value = "grey") +
+  theme_void() +
+  ggtitle("Buckner 7-network cerebellar parcellation")
 ```
 
-## Source data
+![](reference/figures/README-buckner7-1.png)
 
-The NIfTI volumes and color lookup tables in `data-raw/` were copied
-from the FreeSurfer 7.4.1 installation at:
+## 17-network parcellation
 
-    $FREESURFER_HOME/average/Buckner_JNeurophysiol11_MNI152/
+``` r
+ggplot() +
+  geom_brain(
+    atlas = buckner17,
+    mapping = aes(fill = label),
+    position = position_brain(. ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = buckner17$palette, na.value = "grey") +
+  theme_void() +
+  ggtitle("Buckner 17-network cerebellar parcellation")
+```
 
-These are MNI152-space cerebellar parcellations derived from
-resting-state functional connectivity in 1000 subjects.
+![](reference/figures/README-buckner17-1.png)
 
 ## Reference
 
-Buckner RL, Krienen FM, Castellanos A, Diaz JC, Yeo BTT (2011). The
-organization of the human cerebellum estimated by intrinsic functional
-connectivity. *J Neurophysiol*, 106(5):2322-2345.
-<doi:%5B10.1152/jn.00339.2011>\](<https://doi.org/10.1152/jn.00339.2011>)
+Buckner RL et al. (2011). The organization of the human cerebellum
+estimated by intrinsic functional connectivity. *Journal of
+Neurophysiology*, 106(5), 2322-2345.
 
 ## Code of Conduct
 
