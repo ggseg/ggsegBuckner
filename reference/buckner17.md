@@ -6,13 +6,13 @@ Cerebellar parcellation into 17 functional networks from Buckner et al.
 ## Usage
 
 ``` r
-data(buckner17)
+buckner17()
 ```
 
-## Format
+## Value
 
 A
-[ggseg.formats::ggseg_atlas](https://ggseg.github.io/ggseg.formats/reference/ggseg_atlas.html)
+[ggseg.formats::ggseg_atlas](https://ggsegverse.github.io/ggseg.formats/reference/ggseg_atlas.html)
 object (subcortical).
 
 ## References
@@ -24,13 +24,12 @@ estimated by intrinsic functional connectivity.
 ## See also
 
 Other ggseg_atlases:
-[`buckner7`](https://ggseg.github.io/ggsegBuckner/reference/buckner7.md)
+[`buckner7()`](https://ggseg.github.io/ggsegBuckner/reference/buckner7.md)
 
 ## Examples
 
 ``` r
-data(buckner17)
-buckner17
+buckner17()
 #> 
 #> ── buckner17 ggseg atlas ───────────────────────────────────────────────────────
 #> Type: subcortical
