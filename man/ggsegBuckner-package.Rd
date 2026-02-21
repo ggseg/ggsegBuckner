@@ -11,8 +11,8 @@ Buckner cerebellar parcellation into 7 or 17 functional networks for the 'ggseg'
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegBuckner}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegBuckner/issues}
+  \item \url{https://github.com/ggsegverse/ggsegBuckner}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegBuckner/issues}
 }
 
 }

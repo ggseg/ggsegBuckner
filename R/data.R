@@ -10,6 +10,7 @@
 #'   \doi{10.1152/jn.00339.2011}
 #'
 #' @return A [ggseg.formats::ggseg_atlas] object (subcortical).
+#' @import ggseg.formats
 #' @export
 #' @examples
 #' buckner7()

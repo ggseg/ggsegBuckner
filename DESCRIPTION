@@ -12,7 +12,8 @@ Description: Buckner cerebellar parcellation into 7 or 17 functional networks
 License: CC0
 Encoding: UTF-8
 Depends:
-    R (>= 3.5),
+    R (>= 3.5)
+Imports:
     ggseg.formats
 Suggests:
     ggseg,
