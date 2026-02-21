@@ -1,5 +1,5 @@
 for (nm in c("buckner7", "buckner17")) {
-  atlas <- get(nm)
+  atlas <- do.call(nm, list())
 
   describe(paste(nm, "atlas"), {
     it("is a valid subcortical ggseg_atlas", {

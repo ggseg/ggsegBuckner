@@ -11,8 +11,6 @@ Description: Buckner cerebellar parcellation into 7 or 17 functional networks
     'ggseg3d'.
 License: CC0
 Encoding: UTF-8
-LazyData: true
-LazyDataCompression: xz
 Depends:
     R (>= 3.5),
     ggseg.formats

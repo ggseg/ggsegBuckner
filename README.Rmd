@@ -38,12 +38,12 @@ library(ggplot2)
 
 ggplot() +
   geom_brain(
-    atlas = buckner7,
+    atlas = buckner7(),
     mapping = aes(fill = label),
     position = position_brain(. ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = buckner7$palette, na.value = "grey") +
+  scale_fill_manual(values = buckner7()$palette, na.value = "grey") +
   theme_void() +
   ggtitle("Buckner 7-network cerebellar parcellation")
 ```
@@ -52,12 +52,12 @@ ggplot() +
 ```{r "buckner17"}
 ggplot() +
   geom_brain(
-    atlas = buckner17,
+    atlas = buckner17(),
     mapping = aes(fill = label),
     position = position_brain(. ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = buckner17$palette, na.value = "grey") +
+  scale_fill_manual(values = buckner17()$palette, na.value = "grey") +
   theme_void() +
   ggtitle("Buckner 17-network cerebellar parcellation")
 ```
