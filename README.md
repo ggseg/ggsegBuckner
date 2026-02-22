@@ -1,14 +1,27 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
 # ggsegBuckner
 
-> **Work in Progress** — This package is under active development and
+> **Work in Progress** – This package is under active development and
 > has not yet been officially released.
 
 Buckner cerebellar functional parcellation for the ggseg ecosystem.
 
 ## Installation
+
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
+
+``` r
+options(repos = c(
+  ggseg = "https://ggseg.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+install.packages("ggsegBuckner")
+```
 
 You can install this package from [GitHub](https://github.com/) with:
 
@@ -21,40 +34,39 @@ pak::pak("ggseg/ggsegBuckner")
 
 ``` r
 library(ggseg)
-#> Loading required package: ggseg.formats
 library(ggsegBuckner)
 library(ggplot2)
 
 ggplot() +
   geom_brain(
-    atlas = buckner7,
+    atlas = buckner7(),
     mapping = aes(fill = label),
     position = position_brain(. ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = buckner7$palette, na.value = "grey") +
+  scale_fill_manual(values = buckner7()$palette, na.value = "grey") +
   theme_void() +
   ggtitle("Buckner 7-network cerebellar parcellation")
 ```
 
-<img src="man/figures/README-buckner7-1.png" alt="" width="100%" />
+<img src="man/figures/README-buckner7-1.png" style="width:100.0%" />
 
 ## 17-network parcellation
 
 ``` r
 ggplot() +
   geom_brain(
-    atlas = buckner17,
+    atlas = buckner17(),
     mapping = aes(fill = label),
     position = position_brain(. ~ view),
     show.legend = FALSE
   ) +
-  scale_fill_manual(values = buckner17$palette, na.value = "grey") +
+  scale_fill_manual(values = buckner17()$palette, na.value = "grey") +
   theme_void() +
   ggtitle("Buckner 17-network cerebellar parcellation")
 ```
 
-<img src="man/figures/README-buckner17-1.png" alt="" width="100%" />
+<img src="man/figures/README-buckner17-1.png" style="width:100.0%" />
 
 ## Reference
 
